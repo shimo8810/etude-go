@@ -7,5 +7,10 @@ import (
 )
 
 func main() {
-	fmt.Println(animals.FeedDog())
+	fmt.Println(AppName())
+
+	fmt.Println(animals.FeedElephant())
+	fmt.Println(animals.FeedMonkey())
+	fmt.Println(animals.FeedRabbit())
+
 }
