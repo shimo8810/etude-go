@@ -17,6 +17,14 @@ func receiver(n string, ch <-chan int) {
 	fmt.Println(n, "is done.")
 }
 
+type Neko struct {
+	Id int
+}
+
+func (n *Neko) String() string {
+	return fmt.Sprintf("id: %d", n.Id)
+}
+
 func main() {
 	go fmt.Println("yeah!")
 	fmt.Printf("num cpu: %d\n", runtime.NumCPU())
@@ -34,4 +42,7 @@ func main() {
 	}
 	close(ch)
 	time.Sleep(3 * time.Second)
+
+	neko := Neko{Id: 1}
+	fmt.Println(&neko)
 }
